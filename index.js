@@ -2,7 +2,7 @@ import express from "express";
 import session from "express-session";
 import passport from "passport";
 import { googleAuthMiddleware } from "./auth.js";
-
+//
 const app = express();
 googleAuthMiddleware(passport);
 
