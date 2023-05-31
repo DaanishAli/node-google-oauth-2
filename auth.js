@@ -1,15 +1,10 @@
-// const passport = require("passport");
-import passport from "passport";
-
-// const GoogleStrategy = require("passport-google-oauth2").Strategy;
 import { Strategy as GoogleStrategy } from "passport-google-oauth2";
 
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
-export const googleAuthMiddleware = () => {
+const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
+export const googleAuthMiddleware = (passport) => {
   passport.use(
     new GoogleStrategy(
       {

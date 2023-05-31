@@ -4,7 +4,7 @@ import passport from "passport";
 import { googleAuthMiddleware } from "./auth.js";
 
 const app = express();
-googleAuthMiddleware();
+googleAuthMiddleware(passport);
 
 function isLoggedIn(req, res, next) {
   req.user ? next() : res.sendStatus(401);
