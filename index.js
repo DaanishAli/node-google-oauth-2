@@ -1,8 +1,5 @@
-// const express = require('express');
 import express from "express";
-// const session = require('express-session');
 import session from "express-session";
-// const passport = require("passport");
 import passport from "passport";
 import { googleAuthMiddleware } from "./auth.js";
 
